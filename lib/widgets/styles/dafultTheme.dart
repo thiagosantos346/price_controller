@@ -3,20 +3,39 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PersonalColors {
+
+  static const MaterialColor colorPrimaryMaterial = MaterialColor(
+    _colorPrimaryValue,
+    <int, Color>{
+      50: Color(0xFF1567A9),
+      100: Color(0xFF1567A8),
+      200: Color(0xFF1567A7),
+      300: Color(0xFF1567A6),
+      400: Color(0xFF1567A5),
+      500: Color(_colorPrimaryValue),
+      600: Color(0xFF1567A3),
+      700: Color(0xFF1567A2),
+      800: Color(0xFF1567A1),
+      900: Color(0xFF1567A0),
+    },
+  );
+  static const int _colorPrimaryValue = 0xFF1567A4;
+
   static Color colorPrimary([double opacity = 1]) =>
-      const Color(0x001567A4).withOpacity(opacity);
+      const Color(_colorPrimaryValue).withOpacity(opacity);
+
   static Color colorPrimaryVariant([double opacity = 1]) =>
-      const Color(0x001C8ADB).withOpacity(opacity);
+      const Color(0xFF1C8ADB).withOpacity(opacity);
   static Color colorOnPrimary([double opacity = 1]) =>
-      const Color(0x00000000).withOpacity(opacity);
+      const Color(0xFF000000).withOpacity(opacity);
   static Color colorSecondary([double opacity = 1]) =>
-      const Color(0x003C4656).withOpacity(opacity);
+      const Color(0xFF3C4656).withOpacity(opacity);
   static Color colorSecondaryVariant([double opacity = 1]) =>
-      const Color(0x00596780).withOpacity(opacity);
+      const Color(0xFF596780).withOpacity(opacity);
   static Color colorOnSecondary([double opacity = 1]) =>
-      const Color(0x00D5E5F3).withOpacity(opacity);
+      const Color(0xFFD5E5F3).withOpacity(opacity);
   static Color colorOnError([double opacity = 1]) =>
-      const Color(0x00B00020).withOpacity(opacity);
+      const Color(0xFFB00020).withOpacity(opacity);
 
   static LinearGradient gradientH([double opacity = 1]) => LinearGradient(
     begin: Alignment.centerRight,
