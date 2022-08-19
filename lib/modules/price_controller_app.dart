@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import './home/price_controller_home_page.dart';
 import '../widgets/styles/dafultTheme.dart';
 
@@ -8,13 +9,22 @@ class PriceControllerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Price Controller',
+      debugShowCheckedModeBanner: false,
+      locale: const Locale('pt', 'BR'),
       theme: ThemeData(
         primarySwatch: PersonalColors.colorPrimaryMaterial,
         primaryColor: PersonalColors.colorSecondary(),
         backgroundColor: PersonalColors.colorSecondary()
       ),
-      home: const PriceControllerHomePage(title: 'Flutter Demo Home Page'),
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('pt', 'BR'),
+      ],
+      home: const PriceControllerHomePage(title: 'Price Controller'),
     );
   }
 }
