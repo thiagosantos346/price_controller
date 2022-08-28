@@ -1,48 +1,58 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:price_controller/widgets/styles/defaultTheme.dart';
 
-class TextField extends TextFormField {
-  TextField(
-    label, {
-    Color? labelColor,
-    Function(String)? onValidation,
-    GlobalKey? keyForm,
-    Icon? startIcon,
-    List<TextInputFormatter>? formats,
-    String? Function(String?)? validation,
-    String? placeHolder,
-    TextStyle? textStyle,
-    Widget? icon,
-    bool numbersOnly = false,
-    bool? hide,
-    bool? withEdges = true,
-    bool? withLabel = true,
-    required TextEditingController controller,
-    void Function()? onPressed,
+class TextFieldCustom extends TextFormField {
+  TextFieldCustom(
+    String label, {
+      required TextEditingController controller,
+      void Function()? onPressed,
+      Function(String)? onValidation,
+      GlobalKey? keyForm,
+
+      Widget? icon,
+      List<TextInputFormatter>? formats,
+      Color? labelColor,
+
+      Icon? startIcon,
+      String? Function(String?)? validation,
+      String? placeHolder,
+
+      bool numbersOnly = false,
+      bool? hide       = false,
+      bool? withLabel  = true,
+
   }) : super(
           key: keyForm,
-          style: textStyle,
+          style: FontStyle.fontTextCleanBig,
+          cursorColor: PersonalColors.colorOnPrimary,
           controller: controller,
           inputFormatters: formats,
           obscureText: hide ?? false,
           decoration: InputDecoration(
+            filled: true,
+            fillColor: PersonalColors.colorPrimaryVariant,
             labelText: label,
             hintText: placeHolder,
-            errorStyle: const TextStyle(
-              color: PersonalColors.colorOnError,
+            hintStyle: FontStyle.fontTextCleanBig,
+            errorStyle: FontStyle.fontTextOnErro,
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(2),
+              borderSide: const BorderSide(
+                width: 3,
+                color: PersonalColors.colorOnPrimary,
+                style: BorderStyle.solid,
+              )
             ),
-            border: withEdges!
-                ? OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  )
-                : InputBorder.none,
-            labelStyle: TextStyle(
-              color: withLabel !
-                ? PersonalColors.colorPrimaryVariant
-                : PersonalColors.colorPrimary,
+            focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(2),
+                borderSide: const BorderSide(
+                  width: 3,
+                  color: PersonalColors.colorOnPrimary,
+                  style: BorderStyle.solid,
+                )
             ),
+            labelStyle: FontStyle.fontTextClean,
             suffixIcon: (icon != null)
                 ? IconButton(
                     onPressed: onPressed,
