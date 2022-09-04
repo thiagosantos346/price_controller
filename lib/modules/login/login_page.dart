@@ -5,6 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:price_controller/widgets/styles/defaultTheme.dart';
 
+import 'dart:developer';
+
+import '../../widgets/elevatedButton/elevated_button_custom.dart';
+
 class LoginPage extends GetView<LoginController> {
   LoginPage({Key? key}) : super(key: key);
   final _formKey = GlobalKey<FormState>();
@@ -77,20 +81,11 @@ class LoginPage extends GetView<LoginController> {
                         ),
                         Padding(
                             padding: const EdgeInsets.fromLTRB(0, 16, 0, 0),
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                                primary: PersonalColors.colorPrimaryVariant,
-                                padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-                                textStyle: FontStyle.fontTextCleanBig,
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: const [
-                                Text('Entrar'),
-                              ],
-                            ),
+                          child: ElevatedButtonCustom(
+                            onPressed: () {
+                              debugPrint('teste');
+                            },
+                            label: 'Entrar',
                           ),
                         ),
                         Padding(
