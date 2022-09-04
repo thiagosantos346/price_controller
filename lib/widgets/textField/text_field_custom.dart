@@ -5,22 +5,22 @@ import 'package:price_controller/widgets/styles/defaultTheme.dart';
 class TextFieldCustom extends TextFormField {
   TextFieldCustom(
     String label, {
-      required TextEditingController controller,
-      void Function()? onPressed,
-      Function(String)? onValidation,
-      GlobalKey? keyForm,
+        required TextEditingController controller,
+        void Function()? onPressed,
+        GlobalKey? keyForm,
 
-      Widget? icon,
-      List<TextInputFormatter>? formats,
-      Color? labelColor,
+        Widget? icon,
+        List<TextInputFormatter>? formats,
+        Color? labelColor,
 
-      Icon? startIcon,
-      String? Function(String?)? validation,
-      String? placeHolder,
+        Icon? startIcon,
+        String? Function(String?)? validation,
+        String? placeHolder,
 
-      bool numbersOnly = false,
-      bool? hide       = false,
-      bool? withLabel  = true,
+        bool? hide       = false,
+        bool? withLabel  = true,
+
+        required TextInputType inputType,
 
   }) : super(
           key: keyForm,
@@ -60,11 +60,10 @@ class TextFieldCustom extends TextFormField {
                   )
                 : null,
             prefixIcon: startIcon,
+
           ),
           validator: validation,
-          onFieldSubmitted: onValidation,
-          keyboardType: numbersOnly
-              ? const TextInputType.numberWithOptions(decimal: true)
-              : TextInputType.text,
+          onFieldSubmitted: validation,
+          keyboardType: inputType,
         );
 }
