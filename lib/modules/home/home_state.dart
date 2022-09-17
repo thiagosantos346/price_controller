@@ -9,6 +9,10 @@ import 'package:price_controller/widgets/styles/defaultTheme.dart';
 class HomeState extends State<HomePage> {
   late final String title;
   late final HomeController controller;
+  static const double _itemListHeigth = 120;
+  static const EdgeInsets _itenListEdges = EdgeInsets.fromLTRB(0, 10, 10, 0);
+  static const EdgeInsets _listEdges = EdgeInsets.fromLTRB(10, 10, 10, 10);
+  static const Color _listColor = PersonalColors.colorPrimary;
 
   int _counter = 0;
 
@@ -69,26 +73,63 @@ class HomeState extends State<HomePage> {
           ),
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-              style: FontStyle.fontTextClean,
-            ),
-            Text(
-              '$_counter',
-              style: FontStyle.fontTextCleanVeryStrong,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      body: ListView(
+        padding: _listEdges,
+        children: <Widget>[
+          ElevatedButtonCustom(
+            edges: _itenListEdges,
+            heigth: _itemListHeigth,
+            color: _listColor,
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => LoginPage()),
+              );
+            },
+            label: 'Gerir despensa',
+            icon: const Image(image: AssetImage('assets/images/ico_pantry.png')),
+          ),
+          ElevatedButtonCustom(
+            edges: _itenListEdges,
+            heigth: _itemListHeigth,
+            color: _listColor,
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => LoginPage()),
+              );
+            },
+            label: 'Minhas listas de compra',
+            icon: const Image(image: AssetImage('assets/images/ico_shopping_list.png')),
+          ),
+          ElevatedButtonCustom(
+            edges: _itenListEdges,
+            heigth: _itemListHeigth,
+            color: _listColor,
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => LoginPage()),
+              );
+            },
+            label: 'Ir fazer as compras',
+            icon: const Image(image: AssetImage('assets/images/ico_shopping_cart.png')),
+          ),
+          ElevatedButtonCustom(
+            edges: _itenListEdges,
+            heigth: _itemListHeigth,
+            color: _listColor,
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => LoginPage()),
+              );
+            },
+            label: 'Meus dados de compras',
+            icon: const Image(image: AssetImage('assets/images/ico_reports.png')),
+          ),
+        ],
+      )
     );
   }
 }
