@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:price_controller/modules/login/login_page.dart';
 import 'package:price_controller/widgets/elevatedButton/elevated_button_custom.dart';
 import './home_page.dart';
 import 'home_controller.dart';
 import 'package:price_controller/widgets/styles/defaultTheme.dart';
 
 class HomeState extends State<HomePage> {
-
   late final String title;
   late final HomeController controller;
 
@@ -42,24 +42,28 @@ class HomeState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: PersonalColors.colorPrimary,
       appBar: AppBar(
+        primary: true,
+        automaticallyImplyLeading: false,
         backgroundColor: PersonalColors.colorPrimaryVariant,
         title: Container(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                  'Menu',
-                style:  FontStyle.fontTextCleanBoldVeryBig,
+                'Menu',
+                style: FontStyle.fontTextCleanBoldVeryBig,
               ),
               ElevatedButtonCustom(
                 onPressed: () {
-                  debugPrint('teste');
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage()),
+                  );
                 },
                 label: 'Sair',
-                icon: const Icon(
-                  Icons.logout
-                ),
+                icon: const Icon(Icons.logout),
               )
             ],
           ),
@@ -69,12 +73,13 @@ class HomeState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
+            Text(
               'You have pushed the button this many times:',
+              style: FontStyle.fontTextClean,
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: FontStyle.fontTextCleanVeryStrong,
             ),
           ],
         ),

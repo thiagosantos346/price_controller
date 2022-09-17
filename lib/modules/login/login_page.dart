@@ -1,3 +1,4 @@
+import 'package:price_controller/modules/home/home_page.dart';
 import 'package:price_controller/widgets/textField/text_field_custom.dart';
 import 'package:price_controller/modules/login/login_controller.dart';
 
@@ -83,7 +84,10 @@ class LoginPage extends GetView<LoginController> {
                             padding: const EdgeInsets.fromLTRB(0, 16, 0, 0),
                           child: ElevatedButtonCustom(
                             onPressed: () {
-                              debugPrint('teste');
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(builder: (context) => const HomePage()),
+                              );
                             },
                             label: 'Entrar',
                             icon: null,
