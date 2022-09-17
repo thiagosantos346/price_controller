@@ -2,10 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
+import 'package:price_controller/modules/home/home_module.dart';
 
 import 'package:price_controller/modules/login/login_module.dart';
 
-import 'package:price_controller/modules/home/price_controller_home_page.dart';
+import 'package:price_controller/modules/home/home_page.dart';
 import 'package:price_controller/modules/login/login_module.dart';
 import 'package:price_controller/widgets/styles/defaultTheme.dart';
 
@@ -32,9 +33,10 @@ class PriceControllerApp extends StatelessWidget {
       ],
       getPages: [
         ...LoginModule().routes,
+        ...HomeModule().routes
       ],
-      initialRoute: '/login',
-      home: const PriceControllerHomePage(title: 'Price Controller'),
+      initialRoute: '/home',
+      home: const HomePage(),
     );
   }
 }

@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import './price_controller_home_page.dart';
+import 'package:price_controller/widgets/elevatedButton/elevated_button_custom.dart';
+import './home_page.dart';
+import 'home_controller.dart';
+import 'package:price_controller/widgets/styles/defaultTheme.dart';
 
-class PriceControllerHomeState extends State<PriceControllerHomePage> {
+class HomeState extends State<HomePage> {
+
+  late final String title;
+  late final HomeController controller;
+
   int _counter = 0;
 
   void _incrementCounter() {
@@ -36,7 +43,27 @@ class PriceControllerHomeState extends State<PriceControllerHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        backgroundColor: PersonalColors.colorPrimaryVariant,
+        title: Container(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                  'Menu',
+                style:  FontStyle.fontTextCleanBoldVeryBig,
+              ),
+              ElevatedButtonCustom(
+                onPressed: () {
+                  debugPrint('teste');
+                },
+                label: 'Sair',
+                icon: const Icon(
+                  Icons.logout
+                ),
+              )
+            ],
+          ),
+        ),
       ),
       body: Center(
         child: Column(

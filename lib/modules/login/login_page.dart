@@ -86,6 +86,7 @@ class LoginPage extends GetView<LoginController> {
                               debugPrint('teste');
                             },
                             label: 'Entrar',
+                            icon: null,
                           ),
                         ),
                         Padding(
