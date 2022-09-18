@@ -90,7 +90,6 @@ class FontStyle {
   static const middleOpacity = 0.4;
   static const hardOpacity = 0.4;
 
-
   static TextStyle mainTextStyle = TextStyle(
     shadows: <Shadow>[
       Shadow(
@@ -304,24 +303,66 @@ class PersonalIcons {
         color: PersonalColors.colorOnPrimary,
         size: length,
       );
+
   static Icon iconDelete([double length = 20]) => Icon(
         FontAwesomeIcons.trashAlt,
         color: PersonalColors.colorOnError,
         size: length,
       );
+
   static Icon iconPicture([double length = 20]) => Icon(
         FontAwesomeIcons.image,
         color: PersonalColors.colorOnPrimary,
         size: length,
       );
+
   static Icon iconSetting([double length = 20]) => Icon(
         FontAwesomeIcons.cogs,
         color: PersonalColors.colorOnPrimary,
         size: length,
       );
+
+  static Image reports() {
+    return const Image(image: AssetImage('assets/images/ico_reports.png'));
+  }
+
+  static Image shoppingCart() {
+    return const Image(
+        image: AssetImage('assets/images/ico_shopping_cart.png'));
+  }
+
+  static Image shoppingList() {
+    return const Image(
+        image: AssetImage('assets/images/ico_shopping_list.png'));
+  }
+
+  static Image pantry() {
+    return const Image(image: AssetImage('assets/images/ico_pantry.png'));
+  }
+
+  static Widget assaiIco() {
+    return Container(
+        decoration: BoxDecoration(
+          boxShadow: PersonalDecorations.DefaultShadows()
+        ),
+        child : const CircleAvatar(
+          radius: 50,
+          backgroundImage: AssetImage('assets/temp/ico_assai.png'),
+        )
+    );
+  }
 }
 
-class Decorations {
+class PersonalDecorations {
+  static List<BoxShadow> DefaultShadows() => [
+        BoxShadow(
+          color: Colors.black.withOpacity(0.2),
+          spreadRadius: 5,
+          blurRadius: 25,
+          offset: const Offset(0, 3),
+        )
+      ];
+
   static BoxDecoration edgeContainers(
           {Gradient? gradient, Color? cor, double widthEdge = 0.5}) =>
       BoxDecoration(

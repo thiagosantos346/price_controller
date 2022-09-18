@@ -80,6 +80,7 @@ flutter:
     - assets/images/ico_reports.png
     - assets/images/ico_shopping_cart.png
     - assets/images/ico_shopping_list.png
+    - assets/temp/ico_assai.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

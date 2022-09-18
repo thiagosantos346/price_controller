@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:price_controller/modules/login/login_page.dart';
+import 'package:price_controller/modules/shopping_list/shopping_list_page.dart';
 import 'package:price_controller/widgets/elevatedButton/elevated_button_custom.dart';
 import './home_page.dart';
 import 'home_controller.dart';
@@ -14,14 +15,6 @@ class HomeState extends State<HomePage> {
   static const EdgeInsets _listEdges = EdgeInsets.fromLTRB(10, 10, 10, 10);
   static const Color _listColor = PersonalColors.colorPrimary;
 
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   void initState() {
     super.initState();
@@ -29,17 +22,9 @@ class HomeState extends State<HomePage> {
   }
 
   void initialization() async {
-    // This is where you can initialize the resources needed by your app while
-    // the splash screen is displayed.  Remove the following example because
-    // delaying the user experience is a bad design practice!
-    // ignore_for_file: avoid_print
-    print('ready in 3...');
     await Future.delayed(const Duration(seconds: 1));
-    print('ready in 2...');
     await Future.delayed(const Duration(seconds: 1));
-    print('ready in 1...');
     await Future.delayed(const Duration(seconds: 1));
-    print('go!');
     FlutterNativeSplash.remove();
   }
 
@@ -87,7 +72,7 @@ class HomeState extends State<HomePage> {
               );
             },
             label: 'Gerir despensa',
-            icon: const Image(image: AssetImage('assets/images/ico_pantry.png')),
+            icon: PersonalIcons.pantry(),
           ),
           ElevatedButtonCustom(
             edges: _itenListEdges,
@@ -96,11 +81,11 @@ class HomeState extends State<HomePage> {
             onPressed: () {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => LoginPage()),
+                MaterialPageRoute(builder: (context) => ShoppingListPage()),
               );
             },
             label: 'Minhas listas de compra',
-            icon: const Image(image: AssetImage('assets/images/ico_shopping_list.png')),
+            icon: PersonalIcons.shoppingList(),
           ),
           ElevatedButtonCustom(
             edges: _itenListEdges,
@@ -113,7 +98,7 @@ class HomeState extends State<HomePage> {
               );
             },
             label: 'Ir fazer as compras',
-            icon: const Image(image: AssetImage('assets/images/ico_shopping_cart.png')),
+            icon: PersonalIcons.shoppingCart(),
           ),
           ElevatedButtonCustom(
             edges: _itenListEdges,
@@ -126,7 +111,7 @@ class HomeState extends State<HomePage> {
               );
             },
             label: 'Meus dados de compras',
-            icon: const Image(image: AssetImage('assets/images/ico_reports.png')),
+            icon: PersonalIcons.reports(),
           ),
         ],
       )

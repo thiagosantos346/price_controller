@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './modules/price_controller_app.dart';
+import 'price_controller_app.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() {
