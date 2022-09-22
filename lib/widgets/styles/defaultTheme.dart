@@ -360,7 +360,7 @@ class PersonalIcons {
 
 class PersonalDecorations {
 
-  static Widget centeredLabelButton(String text) {
+  static Widget centeredLabelButton(String text, [TextStyle? style]) {
     return FittedBox(
       fit: BoxFit.cover,
       alignment: Alignment.centerLeft,
@@ -371,7 +371,9 @@ class PersonalDecorations {
         children: [
           Text(
             text,
-            style: FontStyle.fontTextCleanBoldBig,
+            style: (style != null )
+            ? style
+            : FontStyle.fontTextCleanBoldBig,
           ),
         ],
       ),

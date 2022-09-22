@@ -31,7 +31,7 @@ class ElevatedButtonCustom extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: (heigth != null) ? heigth : 45,
-      padding: (edges != null) ? edges : const EdgeInsets.fromLTRB(0, 0, 0, 0),
+      padding: (edges != null) ? edges : const EdgeInsets.fromLTRB(5, 0, 5, 0),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(
           Radius.circular(25.0),

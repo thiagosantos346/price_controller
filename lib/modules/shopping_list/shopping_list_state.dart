@@ -3,6 +3,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:price_controller/modules/login/login_page.dart';
 import 'package:price_controller/modules/shopping_list/shopping_list_controller.dart';
 import 'package:price_controller/modules/shopping_list/shopping_list_page.dart';
+import 'package:price_controller/widgets/card_cunstom/card_custom.dart';
 import 'package:price_controller/widgets/elevatedButton/elevated_button_custom.dart';
 import 'package:price_controller/widgets/styles/defaultTheme.dart';
 
@@ -49,39 +50,8 @@ class ShoppingListState extends State<ShoppingListPage> {
       ),
       body: ListView(
         padding: _listEdges,
-        children: <Widget>[
-          ElevatedButtonCustom(
-            edges: _itenListEdges,
-            heigth: _itemListHeigth,
-            color: _listColor,
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => LoginPage()),
-              );
-            },
-            label: PersonalDecorations.centeredLabelButtonMultiLines(
-                [
-                  Text(
-                      'Lista de compras..: Assaí Atacadista',
-                    style: FontStyle.fontTextAlternativeCleanSmall,
-                  ),
-                  Text(
-                    'Data de criação...: 24/08/2022',
-                    style: FontStyle.fontTextAlternativeCleanSmall,
-                  ),
-                  Text(
-                      'Status............: Guardada',
-                    style: FontStyle.fontTextAlternativeCleanSmall,
-                  ),
-                  Text(
-                      'Total da lista....: RS 90,50',
-                    style: FontStyle.fontTextAlternativeCleanSmall,
-                  ),
-                ]
-            ),
-            icon: PersonalIcons.assaiIco(),
-          )
+        children: const <Widget>[
+          CardCustom(),
         ],
       ),
       bottomNavigationBar: BottomAppBar(
