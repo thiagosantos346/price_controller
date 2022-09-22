@@ -80,13 +80,14 @@ class Edges {
 }
 
 class FontStyle {
+  static const double littleSmall = 10.0;
   static const double small = 12.0;
   static const double normal = 14.0;
   static const double big = 18.0;
   static const double veryBig = 32.0;
   static const double strong = 42.0;
 
-  static const baisicOpacity = 0.2;
+  static const basicOpacity = 0.2;
   static const middleOpacity = 0.4;
   static const hardOpacity = 0.4;
 
@@ -109,7 +110,7 @@ class FontStyle {
     Shadow(
       offset: const Offset(4, 0),
       blurRadius: 5.0,
-      color: PersonalColors.colorOnShadow.withOpacity(baisicOpacity),
+      color: PersonalColors.colorOnShadow.withOpacity(basicOpacity),
     ),
   ];
 
@@ -171,6 +172,12 @@ class FontStyle {
   );
 
   // Font Text Clean
+  static TextStyle fontTextAlternativeCleanSmall = GoogleFonts.robotoMono(
+    color: PersonalColors.colorOnPrimary,
+    fontSize: littleSmall,
+    shadows: fontShadow,
+  );
+
   static TextStyle fontTextCleanSmall = GoogleFonts.comfortaa(
     color: PersonalColors.colorOnPrimary,
     fontSize: small,
@@ -357,6 +364,7 @@ class PersonalDecorations {
     return FittedBox(
       fit: BoxFit.cover,
       alignment: Alignment.centerLeft,
+      clipBehavior: Clip.hardEdge,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -366,6 +374,19 @@ class PersonalDecorations {
             style: FontStyle.fontTextCleanBoldBig,
           ),
         ],
+      ),
+    );
+  }
+
+  static Widget centeredLabelButtonMultiLines(List<Text> lines) {
+    return FittedBox(
+      fit: BoxFit.cover,
+      alignment: Alignment.centerLeft,
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: lines,
       ),
     );
   }

@@ -60,7 +60,26 @@ class ShoppingListState extends State<ShoppingListPage> {
                 MaterialPageRoute(builder: (context) => LoginPage()),
               );
             },
-            label: PersonalDecorations.centeredLabelButton('Gerir despensa'),
+            label: PersonalDecorations.centeredLabelButtonMultiLines(
+                [
+                  Text(
+                      'Lista de compras..: Assaí Atacadista',
+                    style: FontStyle.fontTextAlternativeCleanSmall,
+                  ),
+                  Text(
+                    'Data de criação...: 24/08/2022',
+                    style: FontStyle.fontTextAlternativeCleanSmall,
+                  ),
+                  Text(
+                      'Status............: Guardada',
+                    style: FontStyle.fontTextAlternativeCleanSmall,
+                  ),
+                  Text(
+                      'Total da lista....: RS 90,50',
+                    style: FontStyle.fontTextAlternativeCleanSmall,
+                  ),
+                ]
+            ),
             icon: PersonalIcons.assaiIco(),
           )
         ],
