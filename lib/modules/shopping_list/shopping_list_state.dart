@@ -60,7 +60,7 @@ class ShoppingListState extends State<ShoppingListPage> {
                 MaterialPageRoute(builder: (context) => LoginPage()),
               );
             },
-            label: 'Gerir despensa',
+            label: PersonalDecorations.centeredLabelButton('Gerir despensa'),
             icon: PersonalIcons.assaiIco(),
           )
         ],
@@ -70,7 +70,7 @@ class ShoppingListState extends State<ShoppingListPage> {
         child: Container(
           height: 45,
           decoration: BoxDecoration(
-            boxShadow: PersonalDecorations.DefaultShadows(),
+            boxShadow: PersonalDecorations.defaultShadows(),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

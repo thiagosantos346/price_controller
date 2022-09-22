@@ -342,25 +342,41 @@ class PersonalIcons {
 
   static Widget assaiIco() {
     return Container(
-        decoration: BoxDecoration(
-          boxShadow: PersonalDecorations.DefaultShadows()
-        ),
-        child : const CircleAvatar(
+        decoration:
+            BoxDecoration(boxShadow: PersonalDecorations.defaultShadows()),
+        child: const CircleAvatar(
           radius: 50,
           backgroundImage: AssetImage('assets/temp/ico_assai.png'),
-        )
-    );
+        ));
   }
 }
 
 class PersonalDecorations {
-  static List<BoxShadow> DefaultShadows() => [
+
+  static Widget centeredLabelButton(String text) {
+    return FittedBox(
+      fit: BoxFit.cover,
+      alignment: Alignment.centerLeft,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            text,
+            style: FontStyle.fontTextCleanBoldBig,
+          ),
+        ],
+      ),
+    );
+  }
+
+  static List<BoxShadow> defaultShadows() => [
         BoxShadow(
           color: Colors.black.withOpacity(0.2),
           spreadRadius: 5,
           blurRadius: 25,
           offset: const Offset(0, 3),
-        )
+        ),
       ];
 
   static BoxDecoration edgeContainers(

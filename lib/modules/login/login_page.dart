@@ -89,7 +89,7 @@ class LoginPage extends GetView<LoginController> {
                                 MaterialPageRoute(builder: (context) => const HomePage()),
                               );
                             },
-                            label: 'Entrar',
+                            label: PersonalDecorations.centeredLabelButton('Entrar'),
                             icon: null,
                           ),
                         ),

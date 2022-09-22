@@ -51,7 +51,7 @@ class HomeState extends State<HomePage> {
                     MaterialPageRoute(builder: (context) => LoginPage()),
                   );
                 },
-                label: 'Sair',
+                label: PersonalDecorations.centeredLabelButton('Sair') ,
                 icon: const Icon(Icons.logout),
               )
             ],
@@ -71,7 +71,7 @@ class HomeState extends State<HomePage> {
                 MaterialPageRoute(builder: (context) => LoginPage()),
               );
             },
-            label: 'Gerir despensa',
+            label: PersonalDecorations.centeredLabelButton('Gerir despensa'),
             icon: PersonalIcons.pantry(),
           ),
           ElevatedButtonCustom(
@@ -84,7 +84,7 @@ class HomeState extends State<HomePage> {
                 MaterialPageRoute(builder: (context) => ShoppingListPage()),
               );
             },
-            label: 'Minhas listas de compra',
+            label: PersonalDecorations.centeredLabelButton('Minhas listas de compra'),
             icon: PersonalIcons.shoppingList(),
           ),
           ElevatedButtonCustom(
@@ -97,7 +97,7 @@ class HomeState extends State<HomePage> {
                 MaterialPageRoute(builder: (context) => LoginPage()),
               );
             },
-            label: 'Ir fazer as compras',
+            label: PersonalDecorations.centeredLabelButton('Ir fazer as compras'),
             icon: PersonalIcons.shoppingCart(),
           ),
           ElevatedButtonCustom(
@@ -110,7 +110,7 @@ class HomeState extends State<HomePage> {
                 MaterialPageRoute(builder: (context) => LoginPage()),
               );
             },
-            label: 'Meus dados de compras',
+            label: PersonalDecorations.centeredLabelButton('Meus dados de compras'),
             icon: PersonalIcons.reports(),
           ),
         ],
