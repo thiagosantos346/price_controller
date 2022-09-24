@@ -11,6 +11,7 @@ class ElevatedButtonCustom extends StatelessWidget {
   final bool? autofocus;
   final Widget? icon;
   final double? heigth;
+  final double? width;
   final EdgeInsets? edges;
   final Color? color;
 
@@ -23,6 +24,7 @@ class ElevatedButtonCustom extends StatelessWidget {
     this.autofocus,
     this.icon,
     this.heigth,
+    this.width,
     this.edges,
     this.color,
   });
@@ -31,6 +33,7 @@ class ElevatedButtonCustom extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: (heigth != null) ? heigth : 45,
+      width: (width != null) ? width: null,
       padding: (edges != null) ? edges : const EdgeInsets.fromLTRB(5, 0, 5, 0),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(

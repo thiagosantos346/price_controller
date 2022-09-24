@@ -18,30 +18,34 @@ class CardCustom extends StatelessWidget {
           children: [
             Row(children: <Widget>[
               Container(
-                padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
-                child: PersonalIcons.assaiIco(),
+                padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                child: SizedBox(
+                  height: 70,
+                  width: 70,
+                  child: PersonalIcons.assaiIco(),
+                ),
               ),
               PersonalDecorations.centeredLabelButtonMultiLines([
                 Text(
                   'Lista de compras..: Assaí Atacadista',
-                  style: FontStyle.fontTextAlternativeCleanSmall,
+                  style: FontStyle.fontTextAlternativeBoldLittleSmall,
                 ),
                 Text(
                   'Data de criação...: 24/08/2022',
-                  style: FontStyle.fontTextAlternativeCleanSmall,
+                  style: FontStyle.fontTextAlternativeBoldLittleSmall,
                 ),
                 Text(
                   'Status............: Guardada',
-                  style: FontStyle.fontTextAlternativeCleanSmall,
+                  style: FontStyle.fontTextAlternativeBoldLittleSmall,
                 ),
                 Text(
                   'Total da lista....: RS 90,50',
-                  style: FontStyle.fontTextAlternativeCleanSmall,
+                  style: FontStyle.fontTextAlternativeBoldLittleSmall,
                 ),
               ]),
             ]),
             const Divider(
-              height: 5,
+              height: 10,
               color: PersonalColors.colorOnPrimary,
               thickness: 1,
             ),
@@ -50,7 +54,8 @@ class CardCustom extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 ElevatedButtonCustom(
-                  heigth: 30,
+                  heigth: 25,
+                  width: 80,
                   onPressed: () {
                     Navigator.pushReplacement(
                       context,
@@ -65,7 +70,8 @@ class CardCustom extends StatelessWidget {
                   ),
                 ),
                 ElevatedButtonCustom(
-                  heigth: 30,
+                  heigth: 25,
+                  width: 80,
                   onPressed: () {
                     Navigator.pushReplacement(
                       context,
@@ -80,7 +86,8 @@ class CardCustom extends StatelessWidget {
                   ),
                 ),
                 ElevatedButtonCustom(
-                  heigth: 30,
+                  heigth: 25,
+                  width: 80,
                   onPressed: () {
                     Navigator.pushReplacement(
                       context,
@@ -93,10 +100,14 @@ class CardCustom extends StatelessWidget {
                   ),
                   icon: const Icon(
                     Icons.delete,
-                    size: 20,
+                    size: 15,
                   ),
                 )
               ],
+            ),
+            Divider(
+              height: 5,
+              color: PersonalColors.colorPrimary.withOpacity(0.1),
             ),
           ],
         ),

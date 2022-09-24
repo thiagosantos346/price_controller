@@ -171,12 +171,89 @@ class FontStyle {
     shadows: fontShadow,
   );
 
-  // Font Text Clean
-  static TextStyle fontTextAlternativeCleanSmall = GoogleFonts.robotoMono(
+  // Mono spaced Font Text Clean
+
+  static TextStyle fontTextAlternativeCleanLittleSmall = GoogleFonts.robotoMono(
     color: PersonalColors.colorOnPrimary,
     fontSize: littleSmall,
     shadows: fontShadow,
   );
+
+  static TextStyle fontTextAlternativeCleanSmall = GoogleFonts.robotoMono(
+    color: PersonalColors.colorOnPrimary,
+    fontSize: small,
+    shadows: fontShadow,
+  );
+
+  static TextStyle fontTextAlternativeClean = GoogleFonts.robotoMono(
+    color: PersonalColors.colorOnPrimary,
+    fontSize: normal,
+    shadows: fontShadow,
+  );
+
+  static TextStyle fontTextAlternativeCleanBig = GoogleFonts.robotoMono(
+    color: PersonalColors.colorOnPrimary,
+    fontSize: big,
+    shadows: fontShadow,
+  );
+
+  static TextStyle fontTextAlternativeCleanVeryBig = GoogleFonts.robotoMono(
+    color: PersonalColors.colorOnPrimary,
+    fontSize: veryBig,
+    shadows: fontShadow,
+  );
+
+  static TextStyle fontTextAlternativeCleanStrong = GoogleFonts.robotoMono(
+    color: PersonalColors.colorOnPrimary,
+    fontSize: strong,
+    shadows: fontShadow,
+  );
+
+  static TextStyle fontTextAlternativeBoldLittleSmall = GoogleFonts.robotoMono(
+    color: PersonalColors.colorOnPrimary,
+    fontWeight: FontWeight.bold,
+    fontSize: littleSmall,
+    shadows: fontShadow,
+  );
+
+  static TextStyle fontTextAlternativeBoldSmall = GoogleFonts.robotoMono(
+    color: PersonalColors.colorOnPrimary,
+    fontWeight: FontWeight.bold,
+    fontSize: small,
+    shadows: fontShadow,
+  );
+
+  static TextStyle fontTextAlternativeBold = GoogleFonts.robotoMono(
+    color: PersonalColors.colorOnPrimary,
+    fontWeight: FontWeight.bold,
+    fontSize: normal,
+    shadows: fontShadow,
+  );
+
+  static TextStyle fontTextAlternativeBoldBig = GoogleFonts.robotoMono(
+    color: PersonalColors.colorOnPrimary,
+    fontWeight: FontWeight.bold,
+    fontSize: big,
+    shadows: fontShadow,
+  );
+
+  static TextStyle fontTextAlternativeBoldVeryBig = GoogleFonts.robotoMono(
+    color: PersonalColors.colorOnPrimary,
+    fontWeight: FontWeight.bold,
+    fontSize: veryBig,
+    shadows: fontShadow,
+  );
+
+  static TextStyle fontTextAlternativeBoldStrong = GoogleFonts.robotoMono(
+    color: PersonalColors.colorOnPrimary,
+    fontWeight: FontWeight.bold,
+    fontSize: strong,
+    shadows: fontShadow,
+  );
+
+  // Mono spaced Font Text Clean
+
+  // Font Text Clean
 
   static TextStyle fontTextCleanSmall = GoogleFonts.comfortaa(
     color: PersonalColors.colorOnPrimary,
@@ -348,17 +425,16 @@ class PersonalIcons {
   }
 
   static Widget assaiIco() {
-    return Container(
-        decoration:
-            BoxDecoration(boxShadow: PersonalDecorations.defaultShadows()),
-        child: const CircleAvatar(
-          radius: 50,
-          backgroundImage: AssetImage('assets/temp/ico_assai.png'),
-        ));
+    return PersonalDecorations.circleImage(
+      const AssetImage('assets/temp/ico_assai.png'),
+    );
   }
 }
 
 class PersonalDecorations {
+
+  static const double _imageRadius = 50;
+  static const double _borderSize = 2.1;
 
   static Widget centeredLabelButton(String text, [TextStyle? style]) {
     return FittedBox(
@@ -371,9 +447,7 @@ class PersonalDecorations {
         children: [
           Text(
             text,
-            style: (style != null )
-            ? style
-            : FontStyle.fontTextCleanBoldBig,
+            style: (style != null) ? style : FontStyle.fontTextCleanBoldBig,
           ),
         ],
       ),
@@ -389,6 +463,26 @@ class PersonalDecorations {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: lines,
+      ),
+    );
+  }
+
+  static Widget circleImage(AssetImage assetImage) {
+    return Container(
+      decoration: BoxDecoration(
+        boxShadow: PersonalDecorations.defaultShadows(),
+        borderRadius: const BorderRadius.all(
+          Radius.circular(_imageRadius),
+        ),
+        border: Border.all(
+          color: PersonalColors.colorOnPrimary,
+          width: _borderSize,
+        ),
+      ),
+      child: CircleAvatar(
+        foregroundColor: PersonalColors.colorOnShadow,
+        radius: _imageRadius,
+        backgroundImage: assetImage,
       ),
     );
   }
