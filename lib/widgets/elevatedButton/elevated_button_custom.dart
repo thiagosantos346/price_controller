@@ -33,7 +33,7 @@ class ElevatedButtonCustom extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: (heigth != null) ? heigth : 45,
-      width: (width != null) ? width: null,
+      width: (width != null) ? width : null,
       padding: (edges != null) ? edges : const EdgeInsets.fromLTRB(5, 0, 5, 0),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(
@@ -57,15 +57,23 @@ class ElevatedButtonCustom extends StatelessWidget {
                 primary: (color != null)
                     ? color
                     : PersonalColors.colorPrimaryVariant,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 5,
+                  vertical: 5,
+                ),
                 textStyle: FontStyle.fontTextCleanBoldBig,
               ),
-              icon: (icon != null) ? icon! : const Icon(Icons.error),
+              icon: (icon != null)
+                  ? icon!
+                  : const Icon(
+                      Icons.error,
+                    ),
               label: (label != null)
                   ? label!
-                  : const Text('Defina seu texto'),
-          )
+                  : const Text(
+                      'Defina seu texto',
+                    ),
+            )
           : ElevatedButton(
               onPressed: onPressed,
               style: ElevatedButton.styleFrom(
@@ -73,8 +81,10 @@ class ElevatedButtonCustom extends StatelessWidget {
                 primary: (color != null)
                     ? color
                     : PersonalColors.colorPrimaryVariant,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 0,
+                ),
                 textStyle: FontStyle.fontTextCleanBoldBig,
               ),
               child: Row(
@@ -82,8 +92,10 @@ class ElevatedButtonCustom extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   (label != null)
-                  ? label!
-                  : const Text('Defina seu texto'),
+                      ? label!
+                      : const Text(
+                          'Defina seu texto',
+                        ),
                 ],
               )),
     );
