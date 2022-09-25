@@ -11,7 +11,7 @@ class HomeState extends State<HomePage> {
   late final String title;
   late final HomeController controller;
   static const double _itemListHeigth = 120;
-  static const EdgeInsets _itenListEdges = EdgeInsets.fromLTRB(0, 10, 10, 0);
+  static const EdgeInsets _itemListEdges = EdgeInsets.fromLTRB(0, 10, 10, 0);
   static const EdgeInsets _listEdges = EdgeInsets.fromLTRB(10, 10, 10, 10);
   static const Color _listColor = PersonalColors.colorPrimary;
 
@@ -36,33 +36,31 @@ class HomeState extends State<HomePage> {
         primary: true,
         automaticallyImplyLeading: false,
         backgroundColor: PersonalColors.colorPrimaryVariant,
-        title: Container(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Menu',
-                style: FontStyle.fontTextCleanBoldVeryBig,
-              ),
-              ElevatedButtonCustom(
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginPage()),
-                  );
-                },
-                label: PersonalDecorations.centeredLabelButton('Sair') ,
-                icon: const Icon(Icons.logout),
-              )
-            ],
-          ),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              'Menu',
+              style: FontStyle.fontTextCleanBoldVeryBig,
+            ),
+            ElevatedButtonCustom(
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
+              },
+              label: PersonalDecorations.centeredLabelButton('Sair') ,
+              icon: const Icon(Icons.logout),
+            )
+          ],
         ),
       ),
       body: ListView(
         padding: _listEdges,
         children: <Widget>[
           ElevatedButtonCustom(
-            edges: _itenListEdges,
+            edges: _itemListEdges,
             heigth: _itemListHeigth,
             color: _listColor,
             onPressed: () {
@@ -75,7 +73,7 @@ class HomeState extends State<HomePage> {
             icon: PersonalIcons.pantry(),
           ),
           ElevatedButtonCustom(
-            edges: _itenListEdges,
+            edges: _itemListEdges,
             heigth: _itemListHeigth,
             color: _listColor,
             onPressed: () {
@@ -88,7 +86,7 @@ class HomeState extends State<HomePage> {
             icon: PersonalIcons.shoppingList(),
           ),
           ElevatedButtonCustom(
-            edges: _itenListEdges,
+            edges: _itemListEdges,
             heigth: _itemListHeigth,
             color: _listColor,
             onPressed: () {
@@ -101,7 +99,7 @@ class HomeState extends State<HomePage> {
             icon: PersonalIcons.shoppingCart(),
           ),
           ElevatedButtonCustom(
-            edges: _itenListEdges,
+            edges: _itemListEdges,
             heigth: _itemListHeigth,
             color: _listColor,
             onPressed: () {
