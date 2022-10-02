@@ -5,7 +5,6 @@ import 'item_shopping_list_model.dart';
 
 enum ShoppingListStatus{
   archived,
-  deleted,
   using,
   unarchived,
 }
@@ -39,10 +38,6 @@ class ShoppingListModel {
       break;
       case  ShoppingListStatus.archived : {
         return 'Arquivado';
-      }
-      break;
-      case  ShoppingListStatus.deleted : {
-        return 'Removido';
       }
       break;
       case  ShoppingListStatus.using : {

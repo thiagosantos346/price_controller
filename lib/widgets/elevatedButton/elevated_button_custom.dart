@@ -13,6 +13,7 @@ class ElevatedButtonCustom extends StatelessWidget {
   final double? width;
   final EdgeInsets? edges;
   final Color? color;
+  final Alignment? alignment;
 
   const ElevatedButtonCustom({
     super.key,
@@ -26,6 +27,7 @@ class ElevatedButtonCustom extends StatelessWidget {
     this.width,
     this.edges,
     this.color,
+    this.alignment
   });
 
   @override
@@ -51,7 +53,7 @@ class ElevatedButtonCustom extends StatelessWidget {
           ? ElevatedButton.icon(
               onPressed: onPressed,
               style: ElevatedButton.styleFrom(
-                alignment: Alignment.centerLeft,
+                alignment: (alignment == null ) ? Alignment.centerLeft : alignment,
                 shadowColor: PersonalColors.colorOnShadow,
                 primary: (color != null)
                     ? color

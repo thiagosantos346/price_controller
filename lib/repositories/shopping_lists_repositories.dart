@@ -8,6 +8,14 @@ class ShoppingListRepository {
   get shoppingLists => _shoppingLists;
   get length => _shoppingLists.length;
 
+  void delete(int index){
+
+    if( index < _shoppingLists.length ){
+      _shoppingLists.removeAt(index);
+    }
+
+  }
+
   void addShoppingList({
     required ShoppingListModel shoppingList,
   }) {
