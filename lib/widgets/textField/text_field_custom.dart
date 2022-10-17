@@ -36,6 +36,26 @@ class TextFieldCustom extends TextFormField {
             hintText: placeHolder,
             hintStyle: FontStyle.fontTextCleanBig,
             errorStyle: FontStyle.fontTextOnErro,
+            errorMaxLines: 1,
+            isDense: true,
+            isCollapsed: true,
+            contentPadding: const EdgeInsets.all(10),
+            errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(2),
+                borderSide: const BorderSide(
+                  width: 3,
+                  color: PersonalColors.colorOnPrimary,
+                  style: BorderStyle.solid,
+                )
+            ),
+            focusedErrorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(2),
+                borderSide: const BorderSide(
+                  width: 3,
+                  color: PersonalColors.colorOnPrimary,
+                  style: BorderStyle.solid,
+                )
+            ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(2),
               borderSide: const BorderSide(

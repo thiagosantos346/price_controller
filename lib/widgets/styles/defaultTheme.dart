@@ -10,7 +10,7 @@ class PersonalColors {
   static const colorOnPrimary = Color(0xFFD5E5F0);
   static const colorSecondary = Color(0xFF3C4656);
   static const colorSecondaryVariant = Color(0xFF596780);
-  static const colorOnError = Color(0xFFB00020);
+  static const colorOnError = Color(0xFFD00000);
   static const colorOnShadow = Color(0xFF000000);
 
   static const MaterialColor colorPrimaryMaterial = MaterialColor(
@@ -365,9 +365,9 @@ class FontStyle {
   // Font Text Dark Bold
   static TextStyle fontTextOnErro = GoogleFonts.comfortaa(
     color: PersonalColors.colorOnError,
-    fontSize: normal,
-    fontWeight: FontWeight.normal,
-    shadows: fontShadow,
+    fontSize: littleSmall,
+    fontWeight: FontWeight.bold,
+    //shadows: fontShadow,
   );
   // Font Text Dark Bold
 
