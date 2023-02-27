@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:price_controller/models/shopping_list_model.dart';
-import 'package:price_controller/modules/shopping_list/shopping_list_controller.dart';
-import 'package:price_controller/modules/shopping_list/shopping_list_page.dart';
-import 'package:price_controller/widgets/card_custom/card_custom.dart';
-import 'package:price_controller/widgets/styles/defaultTheme.dart';
-import 'package:price_controller/repositories/shopping_lists_repositories.dart';
-
-import 'package:price_controller/widgets/elevatedButton/elevated_button_custom.dart';
-import 'package:price_controller/widgets/textField/text_field_custom.dart';
 import 'package:provider/provider.dart';
 
-class ShoppingListState extends State<ShoppingListPage> {
-  late ShoppingListRepository repository;
+import 'package:price_controller/widgets/card_custom/card_custom.dart';
+import 'package:price_controller/widgets/elevatedButton/elevated_button_custom.dart';
+import 'package:price_controller/widgets/styles/defaultTheme.dart';
+import 'package:price_controller/widgets/textField/text_field_custom.dart';
+
+import 'package:price_controller/repositories/item_shopping_lists_repositories.dart';
+
+import 'package:price_controller/models/shopping_list_model.dart';
+
+import 'package:price_controller/modules/shopping_list/item_shopping_list/item_shopping_list_page.dart';
+import 'package:price_controller/modules/shopping_list/item_shopping_list/item_shopping_list_controller.dart';
+
+class ItemShoppingListState extends State<ItemShoppingListPage> {
+  late ItemShoppingListRepository repository;
   late String title;
-  late ShoppingListController controller;
+  late ItemShoppingListController controller;
   static const double _itemListHeigth = 120;
   static const EdgeInsets _itemListEdges = EdgeInsets.fromLTRB(0, 10, 10, 0);
   static const EdgeInsets _listEdges = EdgeInsets.fromLTRB(10, 10, 10, 10);
@@ -27,7 +30,7 @@ class ShoppingListState extends State<ShoppingListPage> {
 
   @override
   Widget build(BuildContext context) {
-    repository = Provider.of<ShoppingListRepository>(context);
+    repository = Provider.of<ItemShoppingListRepository>(context);
 
     return Scaffold(
       backgroundColor: PersonalColors.colorPrimary,
@@ -54,20 +57,21 @@ class ShoppingListState extends State<ShoppingListPage> {
                   textValueListName: repository
                       .getAllShoppingListItems()
                       .elementAt(index)
-                      .listName,
-                  textValueCreatedAt: DateFormat.yMd().format(repository
+                      .productName,
+                  textValueCreatedAt: repository
                       .getAllShoppingListItems()
                       .elementAt(index)
-                      .createdAt),
+                      .price
+                      .toString(),
                   textValueStatus: repository
                       .getAllShoppingListItems()
                       .elementAt(index)
-                      .statusToString(),
+                      .count
+                      .toString(),
                   textValueTotalList: repository
                       .getAllShoppingListItems()
                       .elementAt(index)
-                      .totalValue
-                      .toString(),
+                      .obs!,
                   onPressedDeleteButton: () => {
                     setState(() {
                       repository.delete(index);
@@ -100,7 +104,7 @@ class BottomAppBarAddButton extends StatefulWidget {
     required this.onBody,
   }) : super(key: key);
 
-  final ShoppingListRepository repository;
+  final ItemShoppingListRepository repository;
   final bool onBody;
 
   @override
@@ -247,7 +251,6 @@ class _BottomAppBarAddButtonState extends State<BottomAppBarAddButton> {
                               createdAt: DateTime.now(),
                               status: ShoppingListStatus.unarchived,
                               totalValue: 0,
-                              id: null,
                             ),
                           );
                           _listNameController.clear();

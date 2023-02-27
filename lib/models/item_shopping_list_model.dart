@@ -13,16 +13,20 @@ enum UnitTypes{
 
 class ItemShoppingListModel{
 
+  late int id;
+  late int refIdToShoppingList;
   late String productName;
   late String productBrand;
   late String image;
   late String? obs;
   late UnitTypes unitTypes;
-  late Double price;
-  late Double count;
-  late Double? secondCount;
+  late double price;
+  late double count;
+  late double? secondCount;
 
   ItemShoppingListModel({
+    required this.id,
+    required this.refIdToShoppingList,
     required this.productName,
     required this.productBrand,
     required this.image,

@@ -48,6 +48,7 @@ class ShoppingListRepository extends ChangeNotifier {
 
     addShoppingList(
       shoppingList: ShoppingListModel(
+        id: length,
         listName: 'Compra do mês',
         marketName: 'Aassaí Atacadista',
         createdAt: DateTime.now(),
@@ -57,6 +58,7 @@ class ShoppingListRepository extends ChangeNotifier {
     );
     addShoppingList(
       shoppingList: ShoppingListModel(
+        id: length,
         listName: 'Compra da mês',
         marketName: 'Suppermercado Tatico',
         createdAt: DateTime.now(),
@@ -66,6 +68,7 @@ class ShoppingListRepository extends ChangeNotifier {
     );
     addShoppingList(
       shoppingList: ShoppingListModel(
+        id: length,
         listName: 'Compra semanal',
         marketName: 'Atacadão Dia Dia',
         createdAt: DateTime.now(),

@@ -11,6 +11,7 @@ enum ShoppingListStatus{
 
 class ShoppingListModel {
 
+  late int? id;
   late String listName;
   late String marketName;
   late DateTime createdAt;
@@ -20,6 +21,7 @@ class ShoppingListModel {
   late List<ItemShoppingListModel>? items;
 
   ShoppingListModel({
+    this.id,
     required this.listName,
     required this.marketName,
     required this.createdAt,
